@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewFirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:singleLine="true"
+        android:textSize="50sp"
+        tools:text="1234567890" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="4">
+
+        <Button android:text="@string/ce"/>
+
+        <Button
+            android:onClick="onClickClear"
+            android:text="@string/c" />
+        <Button android:text="@string/backspace"/>
+
+        <Button
+            android:onClick="onClickOperator"
+            android:text="@string/divide" />
+
+        <Button
+            android:onClick="onClickNumber"
+            android:text="@string/_7" />
+
+        <Button
+            android:onClick="onClickNumber"
+            android:text="@string/_8" />
+
+        <Button
+            android:onClick="onClickNumber"
+            android:text="@string/_9" />
+
+        <Button
+            android:onClick="onClickOperator"
+            android:text="@string/multiply" />
+
+        <Button
+            android:onClick="onClickNumber"
+            android:text="@string/_4" />
+
+        <Button
+            android:onClick="onClickNumber"
+            android:text="@string/_5" />
+
+        <Button
+            android:onClick="onClickNumber"
+            android:text="@string/_6" />
+
+        <Button
+            android:onClick="onClickOperator"
+            android:text="@string/subtract" />
+
+        <Button
+            android:onClick="onClickNumber"
+            android:text="@string/_1" />
+
+        <Button
+            android:onClick="onClickNumber"
+            android:text="@string/_2" />
+
+        <Button
+            android:onClick="onClickNumber"
+            android:text="@string/_3" />
+
+        <Button
+            android:onClick="onClickOperator"
+            android:text="@string/add" />
+
+        <Button
+            android:onClick="onClickPlusMinus"
+            android:text="@string/abs" />
+
+        <Button
+            android:onClick="onClickNumber"
+            android:text="@string/_0" />
+        <Button android:text="@string/comma"/>
+
+        <Button
+            android:onClick="onClickEqual"
+            android:text="@string/equals" />
+    </GridLayout>
+
+</LinearLayout>
