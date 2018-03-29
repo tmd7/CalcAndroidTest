@@ -46,14 +46,31 @@ public class CalcActivity extends AppCompatActivity {
     }
 
     public void onClickEqual(View v) {
-       String[] operation = display.split(mathOperator);
-       if (operation.length < 2) return;
-        System.out.println("log " + operation[0]+ " " + operation[1]);
-       Double result = operate(operation[0], operation[1], mathOperator);
-       display = "";
-       updateScreen();
-       display = String.valueOf(result);
-       updateScreen();
+        double a = 0;
+        double b = 0;
+
+        String[] operation = display.split(mathOperator);
+        if (operation.length < 2) return;
+        System.out.println("logEqual " + operation[0]+ " " + operation[1]);
+
+        String sTmp = "";
+        char[] chArr = operation[0].toCharArray();
+        if (chArr[0] == '-') {
+            for (int i = 1; i < chArr.length; i++) {
+                sTmp += chArr[i];
+            }
+            double dTmp = Double.valueOf(sTmp) * -1;
+            a = dTmp;
+        }
+
+        a = Double.valueOf(operation[0]);
+        b = Double.valueOf(operation[1]);
+
+        Double result = operate(a, b, mathOperator);
+        display = "";
+        updateScreen();
+        display = String.valueOf(result);
+        updateScreen();
     }
 
     public void onClickPlusMinus(View v) {
@@ -63,13 +80,13 @@ public class CalcActivity extends AppCompatActivity {
         updateScreen();
     }
 
-    public double operate(String a, String b, String op) {
+    public double operate(Double a, Double b, String op) {
         switch (op) {
-            case "+" : return Double.valueOf(a) + Double.valueOf(b);
-            case "-" : return Double.valueOf(a) - Double.valueOf(b);
-            case "/" : return Double.valueOf(a) / Double.valueOf(b);
-            case "X" : try {
-                return Double.valueOf(a) * Double.valueOf(b);
+            case "+" : return a + b;
+            case "-" : return a - b;
+            case "X" : return a * b;
+            case "/" : try {
+                return a / b;
             }catch (Exception e) {
                 Log.d("Calc", e.getMessage());
             }
